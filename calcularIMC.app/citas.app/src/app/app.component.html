@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="text-center mt-3 titulo">
+        Aplicación de Citas 
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            <app-agregar-cita
+                (prepareAgregarCita)="guardarCita( $event )"
+            ></app-agregar-cita>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <app-listar-cita
+                [listaCitas]="listaCitas"
+                (prepareEliminarCita)="eliminarCita( $event )"
+            ></app-listar-cita>
+
+        </div>
+
+    </div>
+
+</div>

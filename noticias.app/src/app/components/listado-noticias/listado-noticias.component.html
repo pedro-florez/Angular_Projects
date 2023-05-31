@@ -1,0 +1,43 @@
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+
+    <div 
+    *ngFor="let noticia of listaNoticias"
+    class="col mb-3">
+
+        <div class="card">
+
+            <img 
+            [src]="noticia.urlToImage || 'https://www.centroamericacuenta.com/wp-content/plugins/bb-plugin/img/no-image.png'"
+            class="card-img-top" 
+            [alt]="noticia.title"
+            height="400px">
+
+            <div class="card-body">
+
+                <h5>
+                    <span class="badge bg-info">
+                        {{ noticia.author }}
+                    </span>
+                </h5>
+
+                <a 
+                [href]="noticia.url"
+                target="_blank">
+
+                    <h5 class="card-title">
+                        {{ noticia.title }}
+                    </h5>
+
+                    <p class="card-text">{{ noticia.description }}</p>
+
+                </a>                    
+                                            
+                {{ noticia.publishedAt | date: 'dd/mm/yyyy' }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

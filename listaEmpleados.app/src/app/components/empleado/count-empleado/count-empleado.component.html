@@ -1,0 +1,32 @@
+<div class="card mt-4">
+
+    <div class="card-header">
+        <h3>Lista de empleados</h3>
+    </div>
+
+    <div class="card-body">
+
+        <div 
+        *ngFor=" let check of dataChecks "
+        class="form-check form-check-inline">
+
+            <input 
+            (change)="radioChange()"
+            [(ngModel)]="radioBtnSelect"
+            class="form-check-input" 
+            type="radio" 
+            name="genero" 
+            id="{{ check.id }}"
+            value="{{ check.nombre }}">
+
+            <label 
+            class="form-check-label" 
+            for="{{ check.id }}">
+                {{ check.nombre }} ({{ getGeneros(check.nombre) }})
+            </label>
+
+        </div>
+
+    </div>
+
+</div>

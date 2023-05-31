@@ -1,0 +1,87 @@
+<div class="card text-bg-light mb-3">
+
+    <div class="card-body">
+
+        <h4 class="card-title text-center mb-3">
+            Agregar cita
+        </h4>
+
+        <div
+        *ngIf="formError"
+        class="alert alert-danger"
+        role="alert">
+            Todos los campos son obligatorios.
+        </div>
+
+        <div class="mb-3">
+
+            <label
+            for="nombreLabel"
+            class="form-label">Nombre completo</label>
+
+            <input
+            [(ngModel)]="nombre"
+            id="nombreLabel"
+            type="text"
+            class="form-control"        
+            placeholder="Ingresar nombre">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label
+            for="fechaLabel"
+            class="form-label">Fecha</label>
+
+            <input
+            [(ngModel)]="fecha"
+            id="fechaLabel"
+            type="date"
+            class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label
+            for="horaLabel"
+            class="form-label">Hora</label>
+
+            <input
+            [(ngModel)]="hora"
+            id="horaLabel"
+            type="time"
+            class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label
+            for="sintomasLabel"
+            class="form-label">Sintomas</label>
+
+            <textarea
+            [(ngModel)]="sintomas"
+            id="sintomasLabel"       
+            class="form-control"
+            rows="3"
+            placeholder="Ingresar sintomas..."
+            ></textarea>
+            
+        </div>
+
+        <div class="mb-3 d-grid">
+
+            <button
+            (click)="agregarCita()"
+            class="btn btn-primary">
+                Guardar cita
+            </button>
+
+        </div>
+        
+    </div>
+
+</div>

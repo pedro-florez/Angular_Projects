@@ -1,0 +1,118 @@
+<div class="row">
+
+    <div class="col-lg-4 offset-lg-4">
+
+        <h2 class="titulo">Calcular IMC</h2>        
+
+        <div class="row">
+
+            <div 
+            *ngFor="let genero of generos"
+            class="col-lg-6">
+
+                <div 
+                (click)="generoActual = genero.nombre"
+                [ngClass]="{ 
+                    'fondoItem contenedor genero': true, 
+                    'generoActivo': ( generoActual === genero.nombre )
+                }">
+                    <i [ngClass]="genero.icon"></i>
+                    <p>{{ genero.nombre }}</p>
+                </div>
+                
+            </div>          
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">            
+
+                <div class="fondoItem contenedor">
+
+                    <p>Altura</p>
+
+                    <div class="estiloNumero">
+                        {{ altura }}
+                        <span class="cm">cm</span>
+                    </div>
+
+                    <input                    
+                    type="range"
+                    class="form-range"
+                    (input)="cambiarAltura( $event )"
+                    [value]="altura"
+                    min="120"
+                    max="220">
+
+                </div>                
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                
+                <div class="fondoItem contenedor">
+
+                    <p>Peso</p>
+
+                    <div class="estiloNumero">
+                        {{ peso }}
+                    </div>
+
+                    <div class="btn-suma-resta">
+                        <i 
+                        class="fas fa-minus" 
+                        (click)="peso = peso - 1"></i>
+                        <i 
+                        class="fas fa-plus"  
+                        (click)="peso = peso + 1"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                
+                <div class="fondoItem contenedor">
+
+                    <p>Edad</p>
+
+                    <div class="estiloNumero">
+                        {{ edad }}
+                    </div>
+
+                    <div class="btn-suma-resta">
+                        <i 
+                        class="fas fa-minus" 
+                        (click)="edad = edad - 1"></i>
+                        <i 
+                        class="fas fa-plus" 
+                        (click)="edad = edad + 1"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <button 
+                (click)="calcularIMC()"
+                class="btn btn-primary btn-lg btn-block btn-color">
+                    CALCULAR
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

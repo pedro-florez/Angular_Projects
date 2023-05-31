@@ -1,0 +1,80 @@
+<div class="grid__container">
+    
+    <form 
+    [formGroup]="form" 
+    (ngSubmit)="guardarEmpleado()"
+    class="content__form">
+
+        <h2>{{ accion }} Empleado</h2>
+
+        <!-- Mostar valores {{ form.value | json }} -->        
+
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>        
+
+        <div
+        *ngIf="isTouched('nombre')"
+        class="mensajes__error">
+            {{ showMessageError('nombre') }}
+        </div>
+
+        <mat-form-field>
+            <mat-label>Apellidos</mat-label>
+            <input matInput formControlName="apellidos">
+        </mat-form-field>
+
+        <div
+        *ngIf="isTouched('apellidos')"
+        class="mensajes__error">
+            {{ showMessageError('apellidos') }}
+        </div>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input  matInput formControlName="email">
+        </mat-form-field>
+
+        <div
+        *ngIf="isTouched('email')"
+        class="mensajes__error">
+            {{ showMessageError('email') }}
+        </div>
+
+        <mat-form-field>
+            <mat-label>Teléfono</mat-label>
+            <input matInput formControlName="telefono">
+        </mat-form-field>
+
+        <div
+        *ngIf="isTouched('telefono')"
+        class="mensajes__error">
+            {{ showMessageError('telefono') }}
+        </div>
+
+        <button
+        [disabled]="form.invalid"
+        mat-raised-button        
+        type="submit"
+        color="primary">
+            {{ btnName }} Empleado
+        </button>
+
+        <button
+        routerLink="/"
+        mat-raised-button
+        color="warn">
+            Volver
+        </button>
+
+    </form>
+
+    <div class="image_form">
+        <img
+        src="../../../assets/add_form.svg"
+        alt="agregar datos"
+        width="460px">
+    </div>
+
+</div>    

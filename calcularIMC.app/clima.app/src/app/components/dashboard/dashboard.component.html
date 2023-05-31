@@ -1,0 +1,79 @@
+<div class="container mt-5">
+   
+    <div
+    *ngIf="showAlertError"
+    class="alert alert-dismissible alert-danger">
+        Error al obtener el clima
+    </div>  
+
+    <div class="row">
+
+        <div class="col-lg-5">
+
+            <img 
+            class="mb-3"
+            src="../../../assets/clima_icon.png"
+            alt="clima"
+            width="360px">
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="input-group mb-3">
+
+                <span class="input-group-text">
+                    <i class="fas fa-map-marker-alt"></i>
+                </span>
+
+                <input
+                [(ngModel)]="ciudad"
+                type="text" 
+                class="form-control form-control-lg"
+                placeholder="Ingresar ciudad">
+
+            </div>
+
+            <div class="mb-4 text-center">
+
+                <button
+                (click)="obtenerClima()"
+                [disabled]="ciudad === ''"
+                type="button"
+                class="btn btn-primary btn__search">
+                    <i class="fas fa-search"></i>
+                    Buscar
+                </button>
+
+            </div>
+
+            <div *ngIf="loading" class="spinner"></div>
+
+            <div 
+            *ngIf="resultado"
+            class="card">
+
+                <div class="card-body"> 
+                    
+                    <p>{{ ciudadObtenida }}</p>
+
+                    <p>
+                        <span>Temperatura:</span> 
+                        {{ temperatura | number: '1.2-2' }}
+                    </p>
+                    <p>
+                        <span>Humedad: </span> {{ humedad }}
+                    </p>
+                    <p>
+                        <span>Clima:</span> {{ clima }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

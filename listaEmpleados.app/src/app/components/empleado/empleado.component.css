@@ -1,0 +1,5 @@
+
+
+.table > :not(:last-child) > :last-child > * {  
+    border-color: inherit;
+}

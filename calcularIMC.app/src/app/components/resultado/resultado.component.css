@@ -1,0 +1,25 @@
+.fondoItem {
+    background-color: #FF111328;
+    height: 430px;
+    border-radius: 20px;
+    color: white;
+}
+
+.clasificacion {
+    color: #12BD45;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.estiloNumero {
+    font-size: 70px;
+    font-weight: 700;
+    padding-top: 22px;
+    padding-bottom: 6px;
+}
+
+.interpretacion {
+    font-size: 18px;
+    margin: 10px 40px;
+    text-align: center;
+}

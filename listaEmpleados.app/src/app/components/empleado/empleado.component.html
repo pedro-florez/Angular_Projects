@@ -1,0 +1,52 @@
+
+<app-count-empleado 
+    [listaEmpleados]="listaEmpleados"
+    (getRadioBtnSelect)="recibirRadioBtnSelect( $event )"
+>
+</app-count-empleado>
+
+<div class="card mt-4">
+
+    <div class="card-body">
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Genero</th>
+                    <th>Salario</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <!-- ng-container Se utiliza para hacer anidaciones  -->
+                <ng-container 
+                *ngFor="let empleado of listaEmpleados">
+                    
+                    <tr 
+                    *ngIf="
+                        radioBtnSelect === 'Todos' ||
+                        radioBtnSelect === empleado.genero
+                    ">
+                        <td>{{ empleado.id }}</td>
+                        <td>{{ empleado.nombre }}</td>
+                        <td>{{ empleado.apellidos }}</td>
+                        <td>{{ empleado.genero }}</td>
+                        <td>{{ empleado.salario | currency }}</td>
+                    </tr>
+
+                </ng-container>
+                
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

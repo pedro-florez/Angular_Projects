@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+    <app-formulario 
+    (parametrosSeleccionados)="buscarNoticia( $event )">
+    </app-formulario>
+
+    <app-spinner *ngIf="loading"></app-spinner>
+
+    <app-alert-error *ngIf="showAlertError"></app-alert-error>
+
+    <app-listado-noticias
+    [listaNoticias]="listaNoticias">
+    </app-listado-noticias>
+
+</div>

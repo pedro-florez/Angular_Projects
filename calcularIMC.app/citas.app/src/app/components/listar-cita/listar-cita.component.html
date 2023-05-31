@@ -1,0 +1,60 @@
+<ng-container
+*ngIf="listaCitas.length > 0; else elseListaCitas;">
+
+    <div 
+    *ngFor=" let cita of listaCitas, index as id "
+    class="card text-bg-light mb-3">
+
+        <div class="card-body">       
+            
+            <p class="card-text">
+                <label>Nombre completo: </label>
+                {{ cita.nombre }} 
+            </p>
+                    
+            <p class="card-text">
+                <label>Fecha: </label>
+                {{ cita.fecha | date: 'dd/MM/yyyy' }} 
+            </p>
+                    
+            <p class="card-text">
+                <label>Hora: </label> 
+                {{ cita.hora }}
+            </p>
+                    
+            <p class="card-text">
+                <label>Sintomas: </label>
+                {{ cita.sintomas }}
+            </p>            
+            
+            <div class="d-grid">
+
+                <button
+                (click)="confirmarEliminarCita( id )"
+                class="btn btn-danger">
+                    Eliminar cita
+                </button>
+    
+            </div>       
+
+        </div>
+
+    </div>
+
+</ng-container>
+
+<ng-template #elseListaCitas>
+
+    <div class="card text-bg-light">
+
+        <div class="card-body">
+    
+            <h4 class="card-title text-center">
+                Aún no hay citas para mostrar.
+            </h4>
+    
+        </div>
+    
+    </div>
+
+</ng-template>
