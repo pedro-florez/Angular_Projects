@@ -1,0 +1,32 @@
+<div class="container card mt-3">
+
+    <div class="card-body">
+        
+        <div class="alert alert-info alert-dismissible fade show" role="alert" [style]="activeAlert">
+            Tu mensaje ha sido enviado con exito.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="closeAlert()"></button>
+        </div>
+
+        <h2> 
+            Bienvenido Sr.<b> {{ nombre }} </b>
+        </h2>
+
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre">
+
+        <textarea type="text" class="form-control mt-3" [placeholder]="textPleceholder"></textarea>
+
+        <button class="btn btn-primary mt-3 mb-3" (click)="enviarMensaje()">
+            Enviar mensaje
+        </button>
+
+        <hr>
+
+        <!-- Componente Tabla -->
+        <app-tabla></app-tabla>
+    
+    </div>
+
+</div>
+
+<!-- App Piano -->
+<app-app-piano></app-app-piano>

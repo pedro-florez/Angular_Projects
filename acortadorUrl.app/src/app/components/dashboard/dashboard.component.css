@@ -1,0 +1,10 @@
+input {
+    height: 47px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    width: 190px;
+}

@@ -1,0 +1,33 @@
+<div class="row d-flex justify-content-center mt-4">
+
+    <div class="col-lg-7">
+
+        <div class="card bg-secondary mb-3">
+            
+            <div class="card-body">
+
+                <div class="input-group">
+
+                    <a 
+                    [href]="urlCorta"
+                    class="link__urlCorta"
+                    target="_blank">
+                        {{ urlCorta }}
+                    </a>
+
+                    <button
+                    (click)="copiarUrlCorta()"
+                    type="button"
+                    [class]="'btn ' + btnColorCopy +' btn__copy'">
+                        {{ btnNameCopy }}
+                    </button>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

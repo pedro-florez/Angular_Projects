@@ -1,0 +1,29 @@
+.btn__copy {    
+    font-size: 1.1rem;
+    border-radius: 6px;
+    text-transform: capitalize;
+    width: 170px;
+}
+
+.btn-secondary {
+    color: #1a1a1a;
+    background-color: #ececec;
+    border-color: #e6e5e5;
+}
+
+.btn-secondary:hover {
+    background-color: #bbbbbb;
+}
+
+.link__urlCorta {
+    color: #0236b9;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 12px 20px;
+    width: 340px;
+}
+
+.card-body {
+    padding: 15px 50px 15px 15px;
+}

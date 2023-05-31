@@ -1,0 +1,45 @@
+<div class="container">
+
+    <h1 class="text-center mt-5">
+        Ingresar Url
+    </h1>    
+
+    <div class="row d-flex justify-content-center mt-4">        
+
+        <div class="col-lg-10">
+            
+            <div class="input-group">
+
+                <input
+                [(ngModel)]="nombreUrl"
+                type="text" 
+                class="form-control"
+                placeholder="https://">
+
+                <button
+                (click)="generarUrlCorta()"
+                type="button"
+                class="btn btn-primary">
+                    Acortar
+                </button>
+
+            </div>
+
+            <div
+            *ngIf="showAlertError"
+            class="alert alert-dismissible alert-danger mt-2">
+                {{ mensajeError }}
+            </div>
+
+        </div>
+
+    </div>    
+
+    <app-spinner *ngIf="loading"></app-spinner>
+
+    <app-resultado 
+    *ngIf="resultado"
+    [urlCorta]="urlCorta"
+    ></app-resultado>
+
+</div>

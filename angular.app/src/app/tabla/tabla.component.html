@@ -1,0 +1,51 @@
+<h3>
+    Listado de estudiantes
+
+    <button class="btn btn-primary float-end" (click)="showTable()">
+        {{ activeTable == false ? 'Mostrar tabla' : 'Ocultar tabla' }}
+    </button>
+</h3>
+
+<div class="mt-3" *ngIf="activeTable">
+
+    <table class="table" *ngIf="listaEstudiantes.length > 0; else elselistaEstudiantes">
+    
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+    
+            <tr *ngFor="let estudiante of listaEstudiantes; let id = index">
+                <th>{{ id+1 }}</th>
+                <td [ngStyle]="{'text-transform': 'uppercase'}">
+                    {{ estudiante.nombre }}
+                </td>
+                <td>{{ estudiante.edad }}</td>
+                <td>
+                    <span [ngClass]=" estudiante.estado == 'Activo' ? 
+                    'badge text-bg-success' : 'badge text-bg-danger' ">
+
+                        {{ estudiante.estado }}
+                    </span>
+                </td>
+            </tr>
+    
+        </tbody>
+        
+    </table>
+
+    <ng-template #elselistaEstudiantes>
+
+        <div class="alert alert-warning fade show" role="alert">
+            No se encontraron registros en la base de datos.
+        </div>
+        
+    </ng-template>
+
+</div>

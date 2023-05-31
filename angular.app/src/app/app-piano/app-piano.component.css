@@ -1,0 +1,25 @@
+.piano {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.list-group {
+    width: 600px;
+}
+
+.list-group-item {
+    cursor: pointer;
+    height: 50px;
+}
+
+.list-group-item:hover {
+    transition: .3s all ease;
+    opacity: .8;
+}
