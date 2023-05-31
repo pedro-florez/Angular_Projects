@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #f46b45;
+    background: -webkit-linear-gradient(to right, #eea849, #f46b45);
+    background: linear-gradient(to right, #eea849, #f46b45);
+}
+
+.titulo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.card__title {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,54 @@
+<div 
+*ngIf="listaImagenes.length > 0"
+class="row row-cols-1 row-cols-md-4 g-4 mt-2 mb-3">
+
+    <div
+    *ngFor="let image of listaImagenes" 
+    class="col">
+
+        <div class="card">
+
+            <a [href]="image.largeImageURL">
+                <img 
+                [src]="image.previewURL"
+                [alt]="image.tags"
+                class="card-img-top">
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div 
+*ngIf="showPagination"
+class="d-flex justify-content-center mt-4 mb-2">
+
+    <ul class="pagination">
+
+        <li class="page-item">
+
+            <button 
+            (click)="paginaAnterior()"
+            [disabled]="paginaActual === 1"
+            class="page-link">
+                &laquo; Anterior
+            </button>
+
+        </li>        
+        
+        <li class="page-item">
+
+            <button 
+            (click)="paginaSiguiente()"
+            [disabled]="paginaActual === totalPaginas"
+            class="page-link">
+                Siguiente &raquo;
+            </button>
+
+        </li>
+
+    </ul>
+
+</div>

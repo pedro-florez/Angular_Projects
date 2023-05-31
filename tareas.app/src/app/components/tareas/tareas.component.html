@@ -1,0 +1,65 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-lg-8 offset-lg-2">
+
+            <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="nombreTarea"
+            (keyup.enter)="agregarTarea()"
+            placeholder="Ingresar tarea">
+
+            <button 
+            (click)="agregarTarea()"
+            class="btn btn-primary mt-2 btn__save">
+                Guardar tarea
+            </button>          
+
+        </div>
+
+        <div class="col-lg-6 offset-lg-3 mt-3">            
+
+            <ul 
+            *ngIf="listaTareas.length > 0; else elselistaTareas"
+            class="list-group">
+                <li 
+                *ngFor="let tareas of listaTareas; let id = index"
+                class="list-group-item list-group-item-action">
+
+                    <span
+                    (click)="cambiarEstadoTarea( id, tareas.estado )"
+                    class="btn__status">
+                        <i [ngClass]=" tareas.estado 
+                        ? 'fas fa-check-circle text-success' 
+                        : 'far fa-circle'">
+                        </i>
+                    </span>
+                    
+                    {{ tareas.nombre }}
+
+                    <span 
+                    (click)="eliminarTarea(id)"
+                    class="btn__delete float-end">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+
+                </li>
+            </ul>
+
+            <ng-template #elselistaTareas>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Aún no se han guardado tareas.
+                    </li>
+                </ul>
+
+            </ng-template>
+
+        </div>    
+
+    </div>
+
+</div>

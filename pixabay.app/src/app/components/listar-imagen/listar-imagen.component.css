@@ -1,0 +1,19 @@
+.card:hover {
+    transform: translateY(-0.33333rem);
+    box-shadow: 0 0.5rem 2rem 0 rgb(31 45 65 / 25%);    
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-item {
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aaa;
+    color: white;
+    border-color: aliceblue;
+    opacity: 0.65;
+}

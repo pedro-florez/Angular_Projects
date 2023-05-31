@@ -1,0 +1,74 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <h5 class="card__title">
+            Listado de Tarjetas
+        </h5>
+
+        <div 
+        *ngIf="spinner"
+        class="loader">
+            Cargando...
+        </div>
+
+        <table 
+        *ngIf="listaTarjetas.length > 0; else elseListaTarjetas"
+        class="table">
+
+            <thead>
+
+                <tr>
+                    <th>Titular</th>
+                    <th>Nro tarjeta</th>
+                    <th>Fecha exp</th>
+                    <th>Acciones</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let tarjeta of listaTarjetas">
+                    <th>{{ tarjeta.titular }}</th>
+                    <td>{{ tarjeta.numeroTarjeta }}</td>
+                    <td>{{ formatoFechaExp(tarjeta.fechaExpiracion) }}</td>
+                    <td>
+                        <div class="btn__acciones">
+                            <i 
+                            (click)="editarTarjeta(tarjeta)"
+                            class="fas fa-edit"></i>
+                            <i 
+                            (click)="eliminarTarjeta(tarjeta.id)"
+                            class="fas fa-trash-alt"></i>
+                        </div>                        
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <ng-template #elseListaTarjetas>
+
+            <div 
+            *ngIf="!spinner"
+            class="not__register">
+
+                <span class="img__ops">
+                    <img 
+                    src="../../../assets/ops.svg"
+                    alt="ops">
+                </span>
+    
+                <span class="texto__ops">
+                    ¡Ooops! no se encontraron resultados.
+                </span>
+
+            </div>
+
+        </ng-template>        
+
+    </div>
+
+</div>

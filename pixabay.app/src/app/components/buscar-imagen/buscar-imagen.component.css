@@ -1,0 +1,19 @@
+.card {
+    margin-top: 50px;
+    padding: 50px 40px;
+}
+
+.bg-busca__img {
+    background-color: #ededed;
+    border: 1px solid #eee;
+}
+
+input {
+    height: 47px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    font-size: 1.1rem;    
+    width: 190px;
+}

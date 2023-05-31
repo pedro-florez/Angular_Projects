@@ -1,0 +1,37 @@
+<div class="login">
+    
+    <div class="container d-flex align-items-center h-100">
+
+        <div class="col-lg-12 text-center">
+            
+            <p class="titulo">RUTAS Y SERVICIOS</p>
+        
+            <hr>
+        
+            <button 
+            (click)="redirectToDashboard()"
+            [disabled]="loading"
+            class="btn btn-primary btn-lg">                
+
+                <div *ngIf="loading; else elseBtnName">
+                    <span class="spinner-border spinner-border-sm"></span>
+                    Cargando...
+                </div>
+
+                <ng-template #elseBtnName>
+                    Ingresar
+                </ng-template>
+
+            </button>
+
+            <div 
+            *ngIf="errorService"
+            class="alert alert-danger alert__error">
+                Error al ingresar
+            </div>            
+
+        </div>        
+    
+    </div>
+    
+</div>

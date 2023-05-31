@@ -1,0 +1,30 @@
+<div class="card">
+
+    <img 
+    [src]="imagen"
+    alt="avatar"
+    class="card-img-top">
+
+    <div class="card-body text-center">
+
+        <h5 class="card-title">
+            {{ nombre }}
+        </h5>
+
+        <p class="card-text">
+            {{ email }}
+        </p>
+
+        <div class="d-grid gap-2">
+
+            <button 
+            routerLink="usuario/{{ id }}"
+            class="btn btn-outline-primary">
+                Ver mas
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

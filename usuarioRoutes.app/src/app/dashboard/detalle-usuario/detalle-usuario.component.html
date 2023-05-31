@@ -1,0 +1,78 @@
+<button 
+routerLink="/dashboard"
+class="btn btn-info mt-5"
+style="width: 130px;">
+    <i class="fas fa-reply"></i>
+    Volver
+</button>
+
+<div class="card mt-3">
+
+    <div class="row g-0">
+
+        <div class="col-md-4">
+            <img 
+            [src]="imagen" 
+            class="img-fluid rounded-start" 
+            alt="avatar"
+            width="400">
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+                    {{ nombre }}
+                </h3>
+
+                <table class="table table-striped">
+
+                    <tbody>
+
+                        <tr>
+                            <th>Edad</th>
+                            <td>{{ edad }} años</td>
+                        </tr>
+
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ email }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Celular</th>
+                            <td>{{ celular }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Teléfono</th>
+                            <td>{{ telefono }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Ciudad</th>
+                            <td>{{ ciudad }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>País</th>
+                            <td>{{ pais === 'Spain' ? 'España' : pais }}</td>
+                        </tr>                        
+
+                        <tr>
+                            <th>Fecha registro</th>
+                            <td>{{ fechaReg | date: 'dd/MM/yyyy hh:mm a' }}</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

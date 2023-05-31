@@ -1,0 +1,11 @@
+<div 
+*ngIf="listaUsuarios.length > 0"
+class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+
+    <div 
+    *ngFor="let usuario of listaUsuarios"
+    class="col">
+        <app-card-usuario [user]="usuario"></app-card-usuario>
+    </div>
+
+</div>

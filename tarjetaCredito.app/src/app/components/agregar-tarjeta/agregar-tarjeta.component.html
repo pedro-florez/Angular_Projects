@@ -1,0 +1,150 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <h5 class="card__title">
+            {{ titulo }} Tarjeta
+        </h5>
+
+        <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+
+            <div class="input-group input-group-lg mb-3">
+
+                <span class="input-group-text">
+                    <i class="fas fa-user-tie"></i>
+                </span>
+
+                <div class="form-floating">
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    [class.is-valid]="this.form.get('titular')?.valid"
+                    [class.is-invalid]="this.form.get('titular')?.invalid 
+                    && this.form.get('titular')?.touched"
+                    formControlName="titular"                    
+                    placeholder="Titular">
+    
+                    <label>Titular</label>
+
+                </div>
+                
+            </div>
+
+            <div class="input-group input-group-lg mb-3">
+
+                <span class="input-group-text">
+                    <i class="fas fa-money-check"></i>
+                </span>
+
+                <div class="form-floating">
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    [class.is-valid]="this.form.get('numeroTarjeta')?.valid"
+                    [class.is-invalid]="this.form.get('numeroTarjeta')?.invalid
+                    && this.form.get('numeroTarjeta')?.touched"
+                    formControlName="numeroTarjeta"
+                    maxlength="16"
+                    placeholder="Número de tarjeta">
+    
+                    <label>Número de tarjeta</label>
+
+                </div>                
+                
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-7">
+
+                    <div class="input-group input-group-lg mb-3">
+
+                        <span class="input-group-text">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+
+                        <div class="form-floating">
+
+                            <input
+                            type="text"
+                            class="form-control"
+                            [class.is-valid]="this.form.get('fechaExpiracion')?.valid"
+                            [class.is-invalid]="this.form.get('fechaExpiracion')?.invalid
+                            && this.form.get('fechaExpiracion')?.touched"
+                            formControlName="fechaExpiracion"
+                            [igxMask]="'00/00'"
+                            placeholder="MM/AA">
+            
+                            <label>MM/AA</label>
+        
+                        </div>                       
+                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="input-group input-group-lg mb-3">
+
+                        <span class="input-group-text">
+                            <i class="fas fa-key"></i>
+                        </span>
+
+                        <div class="form-floating">
+
+                            <input
+                            type="text"
+                            class="form-control"
+                            [class.is-valid]="this.form.get('cvv')?.valid"
+                            [class.is-invalid]="this.form.get('cvv')?.invalid
+                            && this.form.get('cvv')?.touched"
+                            formControlName="cvv"
+                            maxlength="3"
+                            placeholder="CVV">
+            
+                            <label>CVV</label>
+        
+                        </div>                        
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mb-2 d-grid">
+
+                <button
+                [disabled]="form.invalid || loading"
+                type="submit"
+                class="btn btn-primary btn-lg">
+
+                    <div *ngIf="loading; else elseBtnName">
+                        <span class="spinner-border spinner-border-sm"></span>
+                        Cargando...
+                    </div>
+
+                    <ng-template #elseBtnName>
+                        {{ btnName }} tarjeta
+                    </ng-template>
+
+                </button>
+
+                <button
+                *ngIf="titulo == 'Editar'"
+                (click)="resetForm()"                        
+                type="button"
+                class="btn btn-danger btn-lg mt-2">                    
+                    Cancelar
+                </button>
+    
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

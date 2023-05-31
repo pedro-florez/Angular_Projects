@@ -1,0 +1,37 @@
+<div class="card text-white bg-busca__img">
+
+    <div class="card-body">
+
+        <div class="row d-flex justify-content-center">      
+
+            <div class="col-lg-10">
+
+                <form (ngSubmit)="buscarImagenes()">
+                
+                    <div class="input-group">
+
+                        <input
+                        [(ngModel)]="nombreImg"
+                        type="text"
+                        name="nombreImg"
+                        class="form-control"
+                        placeholder="Buscar imagen">
+
+                        <button
+                        type="submit"
+                        class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Buscar
+                        </button>
+
+                    </div>
+                    
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

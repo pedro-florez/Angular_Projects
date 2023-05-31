@@ -1,0 +1,28 @@
+.btn__save {
+    margin-left: 18rem;
+}
+
+.btn__status,
+.btn__delete {
+    cursor: pointer;
+    font-size: large;
+}
+
+.btn__status {
+    padding-right: 5px;
+}
+
+.btn__delete {
+    color: red;
+}
+
+.list-group-item {
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+    .btn__save {
+        margin-left: 13rem;
+    }
+}
