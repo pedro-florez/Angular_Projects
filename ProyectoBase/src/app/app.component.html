@@ -1,0 +1,11 @@
+<div class="auth" *ngIf="isAuthenticated; else guest">
+
+    <app-main></app-main>
+
+</div>
+
+{{ isAuthenticated }}
+
+<ng-template #guest>
+    <router-outlet></router-outlet>
+</ng-template>
